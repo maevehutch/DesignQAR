@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DesignQAR Dataset Viewer by Concept</title>
+  <title>DesignQAR Dataset Viewer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script defer src="js/app.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
@@ -70,15 +70,32 @@
     .qa-header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 15px;
       border-bottom: 1px solid #eee;
       padding-bottom: 10px;
     }
     
     .qa-id {
-      font-weight: bold;
-      color: #4285f4;
+      color: #999;
+      font-size: 14px;
     }
+    
+    .qa-concept {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    /* Concept color mappings */
+    .concept-areas { color: #1b9e77; }
+    .concept-color { color: #1b9e77; }
+    .concept-position { color: #1b9e77; }
+    .concept-size { color: #1b9e77; }
+    .concept-shape { color: #1b9e77; }
+    .concept-points { color: #1b9e77; }
+    .concept-lines { color: #1b9e77; }
+    .concept-layout { color: #d95f02; }
+    .concept-interaction { color: #7570b3; }
     
     .qa-section {
       margin-bottom: 15px;
@@ -103,11 +120,11 @@
     }
     
     .answer {
-      border-left-color: #0f9d58;
+      border-left-color: #66a61e;
     }
     
     .rationale {
-      border-left-color: #f4b400;
+      border-left-color: #e7298a;
     }
     
     .images-container {
