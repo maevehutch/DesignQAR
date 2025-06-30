@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DesignQAR Dataset Viewer</title>
+  <title>DesignQAR Dataset Viewer by Concept</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script defer src="js/app.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
@@ -11,42 +11,160 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 2rem;
-      background: #f9f9f9;
+      background: #f5f5f5;
       color: #333;
-      max-width: 960px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.6;
     }
-    h1 { color: #1a1a1a; }
-    select, button {
+    
+    h1 { 
+      color: #333;
+      border-bottom: 2px solid #4285f4;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    
+    .concept-selector {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      border-left: 4px solid #4285f4;
+    }
+    
+    select {
+      padding: 8px 15px;
       font-size: 16px;
-      padding: 0.5rem;
-      margin-right: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 200px;
+      margin-right: 10px;
     }
+    
+    button {
+      padding: 8px 15px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    button:hover {
+      background-color: #3367d6;
+    }
+    
     .qar {
       background: white;
-      padding: 1rem;
+      padding: 20px;
       border-left: 4px solid #4285f4;
-      margin: 1rem 0;
+      margin: 30px 0;
       border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .qar h3 { margin-top: 0; }
-    .label { font-weight: bold; color: #555; margin-top: 0.5rem; }
-    .image {
-      margin-top: 0.5rem;
-      max-width: 200px;
+    
+    .qa-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .qa-id {
+      font-weight: bold;
+      color: #4285f4;
+    }
+    
+    .qa-section {
+      margin-bottom: 15px;
+    }
+    
+    .qa-label {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+      display: block;
+    }
+    
+    .qa-content {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 4px;
+      border-left: 3px solid #ddd;
+    }
+    
+    .question {
+      border-left-color: #4285f4;
+    }
+    
+    .answer {
+      border-left-color: #0f9d58;
+    }
+    
+    .rationale {
+      border-left-color: #f4b400;
+    }
+    
+    .images-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .image-item {
+      max-width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .image-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .image-caption {
+      padding: 8px;
+      background-color: #f5f5f5;
+      color: #333;
+      font-size: 12px;
+      border-top: 1px solid #ddd;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .no-images {
+      font-style: italic;
+      color: #666;
+      padding: 15px;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
   <h1>DesignQAR Dataset Viewer</h1>
-  <label for="concept">Filter by Concept:</label>
-  <select id="concept">
-    <option value="">-- All Concepts --</option>
-    <!-- options populated by JS -->
-  </select>
-  <button onclick="filterData()">Filter</button>
+  
+  <div class="concept-selector">
+    <label for="concept">Filter by Concept:</label>
+    <select id="concept">
+      <option value="">-- All Concepts --</option>
+      <!-- options populated by JS -->
+    </select>
+    <button onclick="filterData()">Filter</button>
+  </div>
+  
   <div id="qarContainer"></div>
 </body>
 </html>
