@@ -16,3 +16,11 @@ Each entry includes:
 **Format**: JSONL  
 **File**: [`designqar.jsonl`](./data/designqar.jsonl)  
 **Images**: Located in the `images/` folder
+
+
+## Dataset Viewer
+
+You can browse and explore the DesignQAR dataset interactively at:
+
+🔗 [View the dataset viewer on GitHub Pages](https://maevehutch.github.io/designqar/)
+
