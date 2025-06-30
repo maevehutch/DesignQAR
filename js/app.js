@@ -33,19 +33,20 @@ function renderData(items) {
     const div = document.createElement("div");
     div.className = "qar";
     
-    // Create header with item number and ID
+    // Create header with ID and concept
     const headerDiv = document.createElement('div');
     headerDiv.className = 'qa-header';
     
-    const indexSpan = document.createElement('span');
-    indexSpan.textContent = `Item ${index + 1}`;
-    
     const qaIdSpan = document.createElement('span');
     qaIdSpan.className = 'qa-id';
-    qaIdSpan.textContent = `ID: ${item.id} — ${item.concept}`;
+    qaIdSpan.textContent = `ID: ${item.id}`;
     
-    headerDiv.appendChild(indexSpan);
+    const conceptSpan = document.createElement('span');
+    conceptSpan.className = `qa-concept concept-${item.concept.toLowerCase()}`;
+    conceptSpan.textContent = item.concept;
+    
     headerDiv.appendChild(qaIdSpan);
+    headerDiv.appendChild(conceptSpan);
     div.appendChild(headerDiv);
     
     // Question section
