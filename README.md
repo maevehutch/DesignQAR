@@ -21,6 +21,5 @@ Each entry includes:
 ## Dataset Viewer
 
 You can browse and explore the DesignQAR dataset interactively at:
-
-🔗 [View the dataset viewer on GitHub Pages](https://maevehutch.github.io/designqar/)
+🔗 https://maevehutch.github.io/designqar/
 
